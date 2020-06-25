@@ -1,0 +1,26 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form__input {
+  display: block;
+  width: 100%;
+}
+
+.login-form__item + .login-form__item {
+  margin-top: 15px;
+}
+
+.login-form__btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 5px 0px 10px 0px;
+}
+
+.login-form__btn {
+  width: calc(50% - 10px);
+  transition: 0.55s ease-in;
+}

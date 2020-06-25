@@ -1,0 +1,38 @@
+@import "../../../assets/fonts/icons";
+
+.offer-card {
+  margin-bottom: 65px;
+  display: flex;
+  align-items: center;
+  transition: ease-in 0.4s;
+}
+
+.offer-card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.offer-card__title {
+  width: 63%;
+  text-align: center;
+  font-weight: normal;
+}
+
+.offer-card .icon {
+  font-size: 60px;
+  color: #ff699f;
+}
+
+@media (max-width: 768px) {
+  .card--fourth {
+    width: 40vw;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .offer-card__title {
+    width: 100%;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,35 @@
+.description-wrapper {
+  width: 50%;
+  padding-bottom: 55px;
+}
+
+.sect-title {
+  font-weight: 700;
+  font-size: 36px;
+  margin: 0px 0px 24px 0px;
+  line-height: 1;
+}
+
+.sect-info {
+  width: 100%;
+  line-height: 25px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .description-wrapper {
+    width: 90%;
+  }
+  .sect-title {
+    width: 75%;
+  }
+}
+
+@media screen and(max-width: 500px) {
+  .sect-title {
+    font-size: 24px;
+  }
+  .sect-info {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,27 @@
+$btn-color: #ff699f;
+.section-wrapper {
+  margin-bottom: 150px;
+}
+
+.coaches {
+  position: relative;
+}
+
+.coaches__edit {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.coaches__edit-btn:hover {
+  border-color: $btn-color;
+  color: $btn-color;
+}
+
+@media screen and(max-width: 1024px) {
+  .section-wrapper {
+    margin-bottom: 100px;
+  }
+}

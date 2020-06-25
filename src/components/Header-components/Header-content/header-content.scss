@@ -1,0 +1,24 @@
+$btn-color: #ff699f;
+.site-header__content {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.site-header__button:hover {
+  border-color: $btn-color;
+  color: $btn-color;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1025px) {
+  .site-header__content {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .site-header__content {
+    display: none;
+  }
+}

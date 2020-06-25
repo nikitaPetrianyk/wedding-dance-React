@@ -1,0 +1,10 @@
+.cards-list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  .cards-list {
+    justify-content: center;
+  }
+}

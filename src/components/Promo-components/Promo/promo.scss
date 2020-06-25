@@ -1,0 +1,12 @@
+.info {
+  display: flex;
+  min-height: 653px;
+  height: 100%;
+}
+
+@media screen and(max-width: 1025px) {
+  .info {
+    flex-direction: column;
+    height: auto;
+  }
+}

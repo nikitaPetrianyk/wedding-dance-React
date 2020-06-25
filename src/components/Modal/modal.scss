@@ -1,0 +1,101 @@
+$btn-color: #ff699f;
+
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+.jw-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 10;
+
+  overflow: auto;
+}
+
+.jw-modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: bounceDown;
+  animation-duration: 0.7s;
+  padding: 10px;
+  margin: 75px auto;
+  width: 25vw;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: #fff;
+  z-index: 5;
+}
+
+.jw-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 8;
+}
+
+.modal-close {
+  font-size: 15px;
+  margin-left: 5px;
+  padding-bottom: 4px;
+  border: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.jw-modal__input {
+  display: block;
+  width: 100%;
+}
+
+.jw-modal__input + .jw-modal__input {
+  margin-top: 10px;
+}
+
+.jw-modal__btn {
+  width: calc(50% - 10px);
+  display: inline-block;
+}
+
+.jw-modal__btn:hover {
+  border-color: $btn-color;
+  color: $btn-color;
+}
+
+.jw-modal__btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.input-block__wrap {
+  padding: 10px;
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-1500px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
