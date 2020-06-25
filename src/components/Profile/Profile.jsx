@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import AuthContext from "../../AuthContext";
-import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 
 const Profile = () => {
   const value = useContext(AuthContext);
@@ -8,6 +8,7 @@ const Profile = () => {
     localStorage.removeItem("auth_token");
     value.changeAuthStatus();
   };
+
   return (
     <BrowserRouter>
       <div className='profile'>

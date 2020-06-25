@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { useRoutes, navigate } from 'hookrouter';
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import AuthContext from "./AuthContext"
 import Header from "./components/Header-components/Header/Header"
@@ -10,7 +9,6 @@ import ServicesComponent from "./components/Services-components/Services/Service
 import Offer from "./components/Offer-components/Offer/Offer";
 import Coaches from "./components/Coaches-components/Coaches/Coaches"
 import Footer from "./components/Footer/Footer";
-import Routes from "./Routes";
 import Profile from './components/Profile/Profile';
 import { getAuthToken, checkIsAuthorized } from "./ContextApi";
 
@@ -23,8 +21,6 @@ const App = () => {
   const [serviceSectionData, setServiceSectionData] = useState({});
   const [offerSectionData, setOfferSectionData] = useState({});
   const [coachesSectionData, setCoachesSectionData] = useState({});
-
-  const routeResult = useRoutes(Routes)
 
   useEffect(() => {
     fetch(`https://us-central1-cms-edu-2020-api.cloudfunctions.net/app/api/v1/section`).then(response => {
@@ -54,28 +50,30 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
-      <AuthContext.Provider value={{
-        isAuthorized: isAuthorized,
-        changeAuthStatus: handleChangeAuthStatus,
-        checkIsAuthorized: checkIsAuthorized,
-        getAuthToken: getAuthToken,
-      }}>
-        <div className="App">
-          <div className="container">
-            {checkIsAuthorized() && (
-              <NavLink to="/profile">Go to user profile</NavLink>)}
-            <Switch><Route exact path='/profile' render={() => <Profile />} /></Switch>
-            <Header sectionData={headerSectionData} />
-            <Promo sectionData={promoSectionData} />
-            <ServicesComponent sectionData={serviceSectionData} />
-            <Offer sectionData={offerSectionData} />
-            <Coaches sectionData={coachesSectionData} />
+    <Router>
+      <Switch>
+        <AuthContext.Provider value={{
+          isAuthorized: isAuthorized,
+          changeAuthStatus: handleChangeAuthStatus,
+          checkIsAuthorized: checkIsAuthorized,
+          getAuthToken: getAuthToken,
+        }}>
+          <div className="App">
+            <div className="container">
+              {checkIsAuthorized() && (
+                <NavLink to="/profile">Go to user profile</NavLink>)}
+              <Route exact path='/profile' component={Profile} />
+              <Header sectionData={headerSectionData} />
+              <Promo sectionData={promoSectionData} />
+              <ServicesComponent sectionData={serviceSectionData} />
+              <Offer sectionData={offerSectionData} />
+              <Coaches sectionData={coachesSectionData} />
+            </div>
+            <Footer sectionData={headerSectionData} />
           </div>
-          <Footer sectionData={headerSectionData} />
-        </div>
-      </AuthContext.Provider>
-    </BrowserRouter>
+        </AuthContext.Provider>
+      </Switch>
+    </Router>
   );
 }
 

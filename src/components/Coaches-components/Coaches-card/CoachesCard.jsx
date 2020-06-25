@@ -7,7 +7,6 @@ class CoachesCard extends React.Component {
     super(props);
   }
   render() {
-    // console.log(this.props.card);
     return (
       <div className='coaches-list__item card'>
         <div className='coaches-list__img-wrap'>
